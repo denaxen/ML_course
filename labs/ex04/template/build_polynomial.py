@@ -18,10 +18,12 @@ def build_poly(x, degree):
     array([[1.  , 0.  , 0.  ],
            [1.  , 1.5 , 2.25]])
     """
-    # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # polynomial basis function: TODO
-    # this function should return the matrix formed
-    # by applying the polynomial basis to the input data
-    # ***************************************************
-    raise NotImplementedError
+    result = np.array(
+        list(
+            map(
+                lambda res: np.array([res ** d for d in range(0, degree + 1)]),
+                x
+            )
+        )
+    )
+    return result

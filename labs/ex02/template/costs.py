@@ -19,4 +19,7 @@ def compute_loss(y, tx, w):
     # INSERT YOUR CODE HERE
     # TODO: compute loss by MSE
     # ***************************************************
-    raise NotImplementedError
+    N = len(y)
+    error = y - tx @ w
+    MSE = 1 / (2 * N) * sum(error ** 2)
+    return MSE
